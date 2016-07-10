@@ -66,7 +66,6 @@ Function Start-MediaPlayer
 	                    $Balloon.BalloonTipTitle = 'Now Playing'            
 	                    $Balloon.Visible = $true            
 	                    $Balloon.ShowBalloonTip(1000)
-                        $Balloon.Dispose()
                     }
                     
                     Function PlayMusic($path, $Shuffle, $Loop)
@@ -104,13 +103,13 @@ Function Start-MediaPlayer
                         {
     	                    $FileList |%{
                                             $CurrentSongDuration= New-TimeSpan -Seconds (Get-SongDuration $_.fullname)
-                                            $Message = "Current Song : "+$(Split-Path $_.fullname -Leaf)+"`nPlay Duration : $($CurrentSongDuration.Minutes) Mins $($CurrentSongDuration.Seconds) Sec`nMode : $Mode"            
+                                            $Message = "Song : "+$(Split-Path $_.fullname -Leaf)+"`nPlay Duration : $($CurrentSongDuration.Minutes) Mins $($CurrentSongDuration.Seconds) Sec`nMode : $Mode"            
 		                    		        $MediaPlayer.Open($_.FullName)					# 1. Open Music file with media player
 		                    		        $MediaPlayer.Play()								# 2. Play the Music File
 		                    		        Show-NotifyBalloon ($Message)                   # 3. Show a notification balloon in system tray
-		                    		        Start-Sleep -Seconds $_.duration            # 4. Pause the script execution until song completes
+		                    		        Start-Sleep -Seconds $_.duration                # 4. Pause the script execution until song completes
 		                    		        $MediaPlayer.Stop()                             # 5. Stop the Song
-		                    		        $NotifyIcon.Dispose()                           
+		                    		        $Balloon.Dispose()                           
 	                        }
                         }While($Loop)
                     }
