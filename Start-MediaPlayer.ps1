@@ -1,8 +1,7 @@
 <#
-    Function to play songs in Windows media player from Powershell Console, change music tracks, shuffle, Loop, Stop.
+    Function to play songs in Windows media player from Powershell Console, change music tracks, shuffle, Stop.
 
     From : Prateek Singh - @SinghPrateik
-    Blog : Geekeefy.wordpress.com
 #> 
 Function Start-MediaPlayer
 {
@@ -67,6 +66,7 @@ Function Start-MediaPlayer
 	                    $Balloon.BalloonTipTitle = 'Now Playing'            
 	                    $Balloon.Visible = $true            
 	                    $Balloon.ShowBalloonTip(1000)
+                        $Balloon.Dispose()
                     }
                     
                     Function PlayMusic($path, $Shuffle, $Loop)
@@ -107,8 +107,8 @@ Function Start-MediaPlayer
                                             $Message = "Current Song : "+$(Split-Path $_.fullname -Leaf)+"`nPlay Duration : $($CurrentSongDuration.Minutes) Mins $($CurrentSongDuration.Seconds) Sec`nMode : $Mode"            
 		                    		        $MediaPlayer.Open($_.FullName)					# 1. Open Music file with media player
 		                    		        $MediaPlayer.Play()								# 2. Play the Music File
-		                    		        Show-NotifyBalloon ($Message)  # 3. Show a notification balloon in system tray
-		                    		        Start-Sleep -Seconds $_.duration                # 4. Pause the script execution until song completes
+		                    		        Show-NotifyBalloon ($Message)                   # 3. Show a notification balloon in system tray
+		                    		        Start-Sleep -Seconds $_.duration            # 4. Pause the script execution until song completes
 		                    		        $MediaPlayer.Stop()                             # 5. Stop the Song
 		                    		        $NotifyIcon.Dispose()                           
 	                        }
@@ -129,3 +129,5 @@ Function Start-MediaPlayer
  }
     
 }
+
+Set-Alias -Name Music -Value Start-MediaPlayer
