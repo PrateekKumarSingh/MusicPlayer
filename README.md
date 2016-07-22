@@ -1,3 +1,3 @@
-# PSRadio
+# MediaPlayer
 
-To play Random music from a selection, Automatcially when I open my PowerShell console or On demand in Background.
+Play Music in Background, Shuffle, Loop, Stop, Next Track Notification all from PowerShell console.
