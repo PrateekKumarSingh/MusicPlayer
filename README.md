@@ -2,32 +2,32 @@
 Invoke-MusicPlayer automates Windows Media Player, to play songs in Background with a set of user preferences available as a 'switch' in the cmdlet.
 
 ## Features and Benefits
-*  Plays all audio in background on a hidden Media player instance
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Default.jpg">
+*  Plays all audio in background on a hidden Media player instance 
+    <br/><img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Default.jpg">
 
 *  Filter Audio Files
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Filter.jpg">
+    <br/><img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Filter.jpg">
 
 *  Randomly shuffles your play list
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Shuffle.jpg">
+    <br/><img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Shuffle.jpg">
 
 *  Runs your playlist in a never ending loop
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/ShuffleAndLoop.jpg">
+    <br/><img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/ShuffleAndLoop.jpg">
 
 *  Stop the playing audio on demand
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Stop.jpg">
+    <br/><img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Stop.jpg">
 
 *  Stores\Caches last accessed directory
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Cached.jpg">
+    <br/><img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Cached.jpg">
 
 *  Displays information and user preferences
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Output.jpg">
+    <br/><img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Output.jpg">
 
 *  Popup a balloon notification in bottom Right corner of the screen, whenever a new song starts playing and continues to do that until manually stopped or it completes playing all songs.
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Balloon.jpg">
+    <br/><img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Balloon.jpg">
 
 *  Support Switch aliases
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/SwitchAlias.jpg">
+    <br/><img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/SwitchAlias.jpg">
 
 
  Installation
@@ -40,7 +40,7 @@ Invoke-MusicPlayer automates Windows Media Player, to play songs in Background w
  Install-Module MusicPlayer -scope CurrentUser
  ```
 
- <img src="https://raw.githubusercontent.com/PrateekKumarSingh/MusicPlayer/master/media/Installation_v5.jpg">
+ <br/><img src="https://raw.githubusercontent.com/PrateekKumarSingh/MusicPlayer/master/media/Installation_v5.jpg">
 
  * [Requires Elevation] Install for Everyone (computer PowerShell Modules folder)
  ```PowerShell
