@@ -9,16 +9,16 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-RootModule = 'Graphical.psm1'
+RootModule = 'MusicPlayer.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.2.0'
+ModuleVersion = '.0.1'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
 
 # ID used to uniquely identify this module
-GUID = 'cc8083f8-4745-4d35-9e68-d8e4b008f651'
+GUID = 'c5d101a9-908a-4c8d-bd50-99c39ac74ed2'
 
 # Author of this module
 Author = 'Prateek Singh'
@@ -27,16 +27,20 @@ Author = 'Prateek Singh'
 CompanyName = 'Prateek Singh'
 
 # Copyright statement for this module
-Copyright = '(c) 2017 Prateek Singh All rights reserved.'
+Copyright = '(c) 2018 Prateek Singh All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = " Plots Data points as a graph in Powershell Console
-
-- Color-coded output depending upon the Value of Datapoint
-- Custom X an Y-Axis labels
-- Graph in console is independent and fully customizable, not like Task Manager (Performance Tab)
-- Could be incorporated in Powershell scripts
-- Can consume datapoints generated during script run or Pre stored data like in a file or database.
+    Description = "Invoke-MusicPlayer automates Windows Media Player, to play songs in Background with a set of user preferences available as a 'switch' in the cmdlet.
+Features and Benefits
+- Plays all audio in background on a hidden Media player instance
+- Filter Audio Files
+- Randomly shuffles your play list
+- Runs your playlist in a never ending loop
+- Stop the playing audio on demand
+- Stores\Caches last accessed directory
+- Displays information and user preferences
+- Support Switch aliases
+- Popup a balloon notification** in bottom Right corner of the screen, whenever a new song starts playing and continues to do that until manually stopped or it completes playing all song
 "
 
 # Minimum version of the Windows PowerShell engine required by this module
@@ -102,13 +106,13 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = @('graph','console','bar','scatter','plot')
+        Tags = @('Audio','Music','Media','mediaplayer','play','songs')
 
         # A URL to the license for this module.
         # LicenseUri = ''
 
         # A URL to the main website for this project.
-        ProjectUri = 'https://github.com/PrateekKumarSingh/Graphical'
+        ProjectUri = 'https://github.com/PrateekKumarSingh/MusicPlayer'
 
         # A URL to an icon representing this module.
         # IconUri = ''

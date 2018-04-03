@@ -18,40 +18,56 @@ Switch to kill any instance of Music playing in backgroud.
 .PARAMETER ShowPlaylist
 
 .EXAMPLE
-    PS Root\> Music F:\Data\Music\MyPlaylist
-    Count TotalPlayDuration Mode      
-    ---------- ----------------- ----      
-    26         98 Mins           Sequential 
+    PS C:\> Music C:\Music\
+    
+    Directory             : C:\Music\
+    Count                 : 4
+    PlayDuration(in mins) : 14
+    Mode                  : Sequential
+    Current               : Cheap Thrills - Vidya Vox Cover.mp3
+    Next                  : Despacito - Luis Fonsi.mp3
    
     Example shows how to run music from by passing a music directory to the Function
 .EXAMPLE
-    PS Root\> Music -Verbose
-    [VERBOSE] You've not provided a music directory, looking for cached information from Previous use.
-    [VERBOSE] Starting a background Job to play Music files
-    
-    Count TotalPlayDuration Mode      
-    ---------- ----------------- ----      
-    26         98 Mins           Sequential
+    PS C:\> play -Verbose
+    VERBOSE: You've not provided a music directory. Looking for cached information from previous execution of this cmdlet
+    VERBOSE: Starting a background Job to play audio files
+
+
+    Directory             : C:\Music\
+    Count                 : 4
+    PlayDuration(in mins) : 14
+    Mode                  : Sequential
+    Current               : Cheap Thrills - Vidya Vox Cover.mp3
+    Next                  : Despacito - Luis Fonsi.mp3
 
     Example shows that in case you don't provide a music directory, the function Looks for the cached information of the diretory from previous us of the function.
     Moreover, It displays the information like Count, Total play duration, and Mode chosen by the user
 .EXAMPLE
-    PS Root\> Music -Shuffle
-    Count TotalPlayDuration Mode   
-    ---------- ----------------- ----   
-    26         98 Mins           Shuffle
+    PS C:\> play -Shuffle
+
+    Directory             : C:\Music\
+    Count                 : 4
+    PlayDuration(in mins) : 14
+    Mode                  : Shuffle
+    Current               : Cheap Thrills - Vidya Vox Cover.mp3
+    Next                  : Whats My Name - Rihanna.mp3
 
     Choose 'Shuffle' switch to play music in shuffle mode, default value is 'sequential'.
 .EXAMPLE
-    PS Root\> Music -Shuffle -Loop
-    Count TotalPlayDuration Mode           
-    ---------- ----------------- ----           
-    26         Infinite     Shuffle in Loop 
+    PS C:\> Music -Shuffle -Loop
+
+    Directory             : C:\Music\
+    Count                 : 4
+    PlayDuration(in mins) : Infinite
+    Mode                  : Shuffle in Loop
+    Current               : Lovers On The Sun - David Guetta.mp3
+    Next                  : Cheap Thrills - Vidya Vox Cover.mp3
 
     Choose 'Loop' switch inorder to continuously play songs in a infinite Loop.
 .EXAMPLE
-    PS Root\> Music -Stop -Verbose
-    [VERBOSE] Stoping any Already running instance of Media in background.
+    PS C:\> Music -Stop -Verbose
+    VERBOSE: Stoping any Already running instance of Media in background.
 
     When 'Stop' switch is used any instance Music playing in backgroud stops.
 .NOTES
