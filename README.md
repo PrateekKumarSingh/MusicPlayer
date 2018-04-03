@@ -3,31 +3,31 @@ Invoke-MusicPlayer automates Windows Media Player, to play songs in Background w
 
 ## Features and Benefits
 *  Plays all audio in background on a hidden Media player instance
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/default.jpg">
+    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Default.jpg">
 
 *  Filter Audio Files
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/filter.jpg">
+    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Filter.jpg">
 
 *  Randomly shuffles your play list
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/shuffle.jpg">
+    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Shuffle.jpg">
 
 *  Runs your playlist in a never ending loop
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/shuffleandloop.jpg">
+    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/ShuffleAndLoop.jpg">
 
 *  Stop the playing audio on demand
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/stop.jpg">
+    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Stop.jpg">
 
 *  Stores\Caches last accessed directory
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/cached.jpg">
+    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Cached.jpg">
 
 *  Displays information and user preferences
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/output.jpg">
+    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Output.jpg">
 
 *  Popup a balloon notification in bottom Right corner of the screen, whenever a new song starts playing and continues to do that until manually stopped or it completes playing all songs.
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/stop.jpg">
+    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Balloon.jpg">
 
 *  Support Switch aliases
-    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/switchalias.jpg">
+    <img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/SwitchAlias.jpg">
 
 
  Installation
