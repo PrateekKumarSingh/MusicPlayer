@@ -2,7 +2,7 @@
 .Synopsis
    Plays music on Windows Media Player in backgroud.
 .DESCRIPTION
-   Function automates Windows Media Player to play songs in Background in order (Random/Sequential) chosen by the user.
+   Invoke-MusicPlayer Cmdlet automates Windows Media Player to play songs in Background in order (Random/Sequential) chosen by the user.
    Moreover, It generates a balloon notification in bottom Right corner of the screen, whenever a new song starts playing and continues to do that until manually stopped or it completes playing all songs.
 .PARAMETER Filter
     String that can be used to filter out songs in a directory. Wildcards are allowed.
@@ -46,7 +46,7 @@ Switch to kill any instance of Music playing in backgroud.
     PS Root\> Music -Shuffle -Loop
     Count TotalPlayDuration Mode           
     ---------- ----------------- ----           
-    26         Infinite Mins     Shuffle in Loop 
+    26         Infinite     Shuffle in Loop 
 
     Choose 'Loop' switch inorder to continuously play songs in a infinite Loop.
 .EXAMPLE
@@ -136,7 +136,7 @@ Function Invoke-MusicPlayer {
                         
                 # Crunching the numbers and Information
                 $FileList = Get-ChildItem $Path -Recurse -Filter $Filter -Include *.mp* | Select-Object fullname, @{n = 'Duration'; e = {get-songduration $_.fullname}}
-                $FileCount = $FileList.count
+                $FileCount = ($FileList | Measure-Object).count
                 $TotalPlayDuration = [Math]::Round(($FileList.duration | Measure-Object -Sum).sum / 60)
                         
                 # Condition to identifed the Mode chosed by the user
@@ -154,19 +154,29 @@ Function Invoke-MusicPlayer {
                     $TotalPlayDuration = "Infinite"
                 }
                         
-                If ($FileList) {    
+                If ($FileList) {
+                    If ($FileCount -gt 1) {
+                        $Current = Split-Path $FileList[0].fullname -Leaf
+                        $Next = Split-Path $FileList[1].fullname -Leaf
+                    }
+                    ElseIf ($FileCount -eq 1) {
+                        $Current = Split-Path $FileList.fullname -Leaf
+                        $Next = $null
+                        $FileCount = '1'
+                    }
+
                     [PSCustomObject] @{
                         Directory    = $Path
                         Count        = $FileCount
-                        PlayDuration = [String]$TotalPlayDuration + " Mins"
+                        'PlayDuration(in mins)' = [String]$TotalPlayDuration
                         Mode         = $Mode
-                        Current      = Split-Path $FileList[0].fullname -Leaf
-                        Next         = Split-Path $FileList[1].fullname -Leaf
+                        Current      = $Current
+                        Next         = $Next
                         Playlist     = $FileList | Foreach-Object { [PSCustomObject] @{ FullName = $_.FullName; Duration = $(ConvertTo-HHmmss $_.duration) } }
                     }
                 }
                 else {
-                    Throw "No music files found in directory `"$path`" ." 
+                    Throw "No music files found in directory:`"$path`" that matches Filter: $Filter ." 
                 }
                         
                 Do {
@@ -195,7 +205,7 @@ Function Invoke-MusicPlayer {
             Start-Job -Name MusicPlayer -InitializationScript $init -ScriptBlock {playmusic $args[0] $args[1] $args[2] $args[3] $args[4]} -ArgumentList $path, $Shuffle, $Loop, $Filter, $ShowPlaylist | Out-Null
             Start-Sleep -Seconds 3       # Sleep to allow media player some breathing time to load files
             $Results = Receive-Job -Name MusicPlayer 
-            $Results | Select-Object Directory, Count, PlayDuration, Mode, Current, Next
+            $Results | Select-Object Directory, Count, 'PlayDuration(in mins)', Mode, Current, Next
             If ($ShowPlaylist){
                 $Results.Playlist | Format-Table -AutoSize
             }
