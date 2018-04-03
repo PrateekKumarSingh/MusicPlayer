@@ -13,7 +13,7 @@ Invoke-MusicPlayer automates Windows Media Player, to play songs in Background w
  Installation
  -
  #### [PowerShell V5](https://www.microsoft.com/en-us/download/details.aspx?id=50395) and Later
- You can install the `Gridify` module directly from the PowerShell Gallery
+ You can install the `MusciPlayer` module directly from the PowerShell Gallery
 
  * [Recommended] Install to your personal PowerShell Modules folder
  ```PowerShell
