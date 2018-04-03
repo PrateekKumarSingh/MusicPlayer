@@ -40,7 +40,7 @@ Invoke-MusicPlayer automates Windows Media Player, to play songs in Background w
  Install-Module MusicPlayer -scope CurrentUser
  ```
 
- <br/><br/><img src="https://raw.githubusercontent.com/PrateekKumarSingh/MusicPlayer/master/media/Installation_v5.jpg">
+ <br/><br/><img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Installation_v5.jpg">
 
  * [Requires Elevation] Install for Everyone (computer PowerShell Modules folder)
  ```PowerShell
@@ -53,6 +53,7 @@ Invoke-MusicPlayer automates Windows Media Player, to play songs in Background w
  ```PowerShell
  iex (new-object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/PrateekKumarSingh/MusicPlayer/master/Install.ps1')
  ```
+ <br/><br/><img src="https://github.com/PrateekKumarSingh/MusicPlayer/blob/master/media/Installation_v4.jpg">
 
 Help Information
 -
