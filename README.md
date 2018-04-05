@@ -59,5 +59,5 @@ Help Information
 -
 Run below commands to see some examples
 ```PowerShell
-Get-Help Set-GridLayout -Examples
+Get-Help Invoke-MusicPlayer -Examples
 ```
