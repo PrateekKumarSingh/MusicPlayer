@@ -1,5 +1,6 @@
 # Powershell Music Player
 Invoke-MusicPlayer automates Windows Media Player, to play songs in Background with a set of user preferences available as a 'switch' in the cmdlet.
+[Full Article](http://ridicurious.com/2018/04/03/powershell-module-to-play-music/)
 
 ## Features and Benefits
 *  **Plays all audio in background on a hidden Media player instance**
